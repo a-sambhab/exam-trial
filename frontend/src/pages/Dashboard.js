@@ -9,7 +9,7 @@ function Dashboard() {
     return null;
   }
 
-  if (!token && access !== "superadmin") {
+  if (!token || access === "superadmin" ) {
     return <Navigate to="/login" replace />;
   }
 

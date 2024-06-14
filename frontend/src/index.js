@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./index.css"
 import LoginForm from "./pages/LoginForm";
 import Landing from "./pages/Landing";
 import RegistrationForm from "./pages/RegistrationForm";
@@ -10,7 +11,7 @@ import { AuthProvider } from "./pages/AuthContext";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Landing />,
+    element: <LoginForm />,
   },
   {
     path: "/login",

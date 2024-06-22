@@ -7,6 +7,10 @@ import Landing from "./pages/Landing";
 import RegistrationForm from "./pages/RegistrationForm";
 import Dashboard from "./pages/Dashboard";
 import { AuthProvider } from "./pages/AuthContext";
+import AddQuestions from "./pages/AddQuestions";
+import AddTest from "./pages/AddTest";
+import AppearTest from "./pages/AppearTest";
+import EvaluateResults from "./pages/EvaluateResults";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +29,22 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
   },
+  {
+    path: "/addquestions",
+    element: <AddQuestions/>
+  },
+  {
+    path: "/addtest",
+    element: <AddTest/>
+  },
+  {
+    path: "/appeartest",
+    element: <AppearTest/>
+  },
+  {
+    path: "/evaluatetest",
+    element: <EvaluateResults/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

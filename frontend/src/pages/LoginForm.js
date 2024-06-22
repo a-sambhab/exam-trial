@@ -8,7 +8,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null); // New state for handling error messages
-  const { setToken, setAccess } = useContext(AuthContext);
+  const { setToken, setAccess, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,12 +18,11 @@ const Login = () => {
         password,
       });
       setToken(response.data.token);
-      const response2 = await axios.get(
-        `http://localhost:3001/getuseraccess?username=${username}`
-      );
-      console.log(response2.data);
-      setAccess(response2.data.access);
+      setAccess(response.data.access);
+      setUser(response.data.userID)
       localStorage.setItem("token", response.data.token);
+      localStorage.setItem("access", response.data.access);
+      localStorage.setItem("user", response.data.user);
       navigate("/dashboard");
     } catch (error) {
       console.error("Authentication failed:", error);

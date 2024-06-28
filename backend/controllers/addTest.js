@@ -10,6 +10,7 @@ const addTest = async (req, res) => {
     answers: req.body.answers,
     starttime: new Date(req.body.starttime),
     endtime: new Date(req.body.endtime),
+    totalMarks: req.body.totalMarks,
   });
   const response = await newTest.save();
   res.send({ message: "Test added successfully", id: response._id });

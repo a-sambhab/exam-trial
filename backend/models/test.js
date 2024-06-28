@@ -34,6 +34,10 @@ const testSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  totalMarks: {
+    type: Number,
+    required: true
+  }
 });
 
 const Test = mongoose.model("Test", testSchema);

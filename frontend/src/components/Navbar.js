@@ -6,7 +6,6 @@ import {
   faClipboardCheck,
   faClipboardQuestion,
   faHouseChimney,
-  faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
@@ -51,7 +50,7 @@ const Navbar = ({ user }) => {
         />
         <Navbutton
             icon={faClipboard}
-            name="Add Test"
+            name="Create Test"
             route="/addtest"
         />
         <Navbutton

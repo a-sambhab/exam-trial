@@ -23,6 +23,10 @@ const questionSchema = new mongoose.Schema({
   class: {
     type: String,
     required: true,
+  },
+  marks: {
+    type: Number,
+    required: true,
   }
 });
 

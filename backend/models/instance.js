@@ -22,6 +22,10 @@ const instanceSchema = new mongoose.Schema({
   comments: {
     type: String,
   },
+  totalMarks: {
+    type: Number,
+    required: true
+  }
 });
 
 const Instance = mongoose.model("Instance", instanceSchema);

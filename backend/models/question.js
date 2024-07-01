@@ -27,6 +27,10 @@ const questionSchema = new mongoose.Schema({
   marks: {
     type: Number,
     required: true,
+  },
+  creator: {
+    type: String,
+    required: true,
   }
 });
 

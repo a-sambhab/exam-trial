@@ -1,12 +1,40 @@
 import React, { useContext, useState } from "react";
 import Navbar from "../components/Navbar";
 import { AuthContext } from "./AuthContext";
+import axios from "axios";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { auto } from "@cloudinary/url-gen/actions/resize";
+import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
+import { AdvancedImage } from "@cloudinary/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const AddQuestions = () => {
   const { user } = useContext(AuthContext);
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "dgy8ybeoy",
+    },
+  });
   const [value, setValue] = useState("f(x) = \\frac{x}{2}");
+  const [standard, setstandard] = useState("12th");
   const [questionset, setQuestionset] = useState([]);
   const [options, setoptions] = useState([]);
+  const [media, setMedia] = useState([]);
+  const uploadImages = async (e) => {
+    const url = "https://api.cloudinary.com/v1_1/dgy8ybeoy/image/upload";
+    const files = document.querySelector("[type=file]").files;
+    // console.log(files)
+    let arr = [];
+    for (let i = 0; i < files.length; i++) {
+      const formData = new FormData();
+      formData.append("file", files[i]);
+      formData.append("upload_preset", "test-trial");
+      const response = await axios.post(url, formData);
+      arr.push(response.data.secure_url);
+    }
+    setMedia([...media, ...arr]);
+  };
   return (
     <>
       <div className="w-screen h-screen bg-[#E0FBFD] flex justify-evenly items-center">
@@ -35,6 +63,14 @@ const AddQuestions = () => {
                         }}
                         className="border-2 w-[60%] h-full"
                       />
+                      <FontAwesomeIcon
+                        icon={faTrash}
+                        onClick={() => {
+                          setoptions((options) =>
+                            options.filter((o, id) => id !== i)
+                          );
+                        }}
+                      />
                     </div>
                   </>
                 );
@@ -47,11 +83,46 @@ const AddQuestions = () => {
               >
                 Add Option
               </button>
-              <input type="file" />
+              <div className="w-full h-[20%] flex flex-col items-center justify-evenly">
+                <label>Media Files</label>
+                {media.length !== 0 ? (
+                  <>
+                    <div className="w-full h-[50%] flex justify-evenly items-center overflow-auto">
+                      {media.map((m) => {
+                        console.log(m);
+                        return (
+                          <>
+                            <img className="w-1/4 h-full" src={m} />
+                          </>
+                        );
+                      })}
+                    </div>
+                  </>
+                ) : (
+                  ""
+                )}
+                <input type="file" multiple />
+                <button
+                  className="w-1/2 bg-black bg-opacity-20 border-2 rounded-lg transition-all ease-in-out duration-100 hover:bg-opacity-5"
+                  onClick={(e) => {
+                    uploadImages(e);
+                  }}
+                >
+                  Upload Media
+                </button>
+              </div>
+              <div className="w-full">
+                  <label>Class</label>
+                <select value={standard} onChange={(e)=>{setstandard(e.target.value)}}>
+                  <option value="12th">12th</option>
+                  <option value="11th">11th</option>
+                  <option value="10th">10th</option>
+                  <option value="9th">9th</option>
+                  <option value="8th">8th</option>
+                </select>
+              </div>
             </div>
-            <div className="w-[48%] h-[98%]">
-              
-            </div>
+            <div className="w-[48%] h-[98%]"></div>
           </div>
         </div>
       </div>

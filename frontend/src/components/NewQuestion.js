@@ -27,6 +27,7 @@ const NewQuestion = (props) => {
     setMedia([...media, ...arr]);
   };
   const addQuestions = () => {
+    console.log(media);
     props.setQuestionset([
       ...props.questionset,
       {
@@ -64,7 +65,7 @@ const NewQuestion = (props) => {
         {options.map((o, i) => {
           return (
             <>
-              <div className="w-[98%] h-[8%] flex items-center justify-evenly">
+              <div className="w-[98%] h-[5%] flex items-center justify-evenly">
                 <label>Option {i + 1}</label>
                 <input
                   value={options[i]}

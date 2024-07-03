@@ -24,6 +24,7 @@ const AddQuestions = () => {
             />
             <QuestionPreview
               questionset={questionset}
+              setQuestionset={setQuestionset}
               user={user}
             />
           </div>

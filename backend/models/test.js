@@ -11,11 +11,7 @@ const testSchema = new mongoose.Schema({
   },
   difficulty: {
     type: String,
-    enum: [
-      "easy",
-      "medium",
-      "hard"
-    ],
+    enum: ["easy", "medium", "hard"],
     required: true,
   },
   questionSet: {
@@ -36,8 +32,12 @@ const testSchema = new mongoose.Schema({
   },
   totalMarks: {
     type: Number,
+    required: true,
+  },
+  examinee: {
+    type: Array,
     required: true
-  }
+  },
 });
 
 const Test = mongoose.model("Test", testSchema);

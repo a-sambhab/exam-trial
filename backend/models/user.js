@@ -14,8 +14,15 @@ const userSchema = new mongoose.Schema({
   },
   access: {
     type: String,
-    enum: ['superadmin', 'proctor', 'examiner', 'schooladmin', 'supervisor', 'student'],
-    required: true
+    enum: [
+      "superadmin",
+      "proctor",
+      "examiner",
+      "schooladmin",
+      "supervisor",
+      "student",
+    ],
+    required: true,
   },
   tokens: [
     {
@@ -27,11 +34,11 @@ const userSchema = new mongoose.Schema({
   ],
 });
 
-userSchema.methods.verifyPassword = async function(password) {
-    const user = this;
-    const isMatch = await bcrypt.compare(password, user.password);
-    return isMatch
-}
+userSchema.methods.verifyPassword = async function (password) {
+  const user = this;
+  const isMatch = await bcrypt.compare(password, user.password);
+  return isMatch;
+};
 
 const User = mongoose.model("User", userSchema);
 

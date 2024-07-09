@@ -23,7 +23,7 @@ const registerStudent = async (req, res) => {
       testsAppeared: [],
     });
 
-    const savedUser = await user.save();
+    const savedUser = await student.save();
     res.json({
       message: "Student Registered Successfully",
       studentid: savedUser._id,

@@ -17,6 +17,6 @@ router.post("/addquestions", addQuestions);
 router.get("/getquestionbytopic", getQuestionsByTopic);
 router.post("/addtest", addTest);
 router.post("/auth/loginStudent", loginAsStudent);
-router.post("/auth/registerStudent", registerStudent)
+router.post("/auth/registerStudent", registerStudent);
 
 module.exports = router;

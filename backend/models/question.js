@@ -31,7 +31,7 @@ const questionSchema = new mongoose.Schema({
   creator: {
     type: String,
     required: true,
-  }
+  },
 });
 
 const Question = mongoose.model("Question", questionSchema);

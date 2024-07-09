@@ -36,7 +36,7 @@ const testSchema = new mongoose.Schema({
   },
   examinee: {
     type: Array,
-    required: true
+    required: true,
   },
 });
 

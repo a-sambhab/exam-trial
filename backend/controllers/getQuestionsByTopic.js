@@ -6,10 +6,14 @@ const getQuestionsByTopic = async (req, res) => {
     { $sample: { size: Number(req.query.qno) } },
   ]);
   if (questions.length > 0) {
-    res.json({message: `Questions of ${req.query.topic} for class ${req.query.class}`, questions: questions})
+    res.json({
+      message: `Questions of ${req.query.topic} for class ${req.query.class}`,
+      questions: questions,
+    });
   } else {
-    res.status(200).send({message: `No questions found for topic ${req.query.topic}`});
-    
+    res
+      .status(200)
+      .send({ message: `No questions found for topic ${req.query.topic}` });
   }
 };
 

@@ -32,7 +32,7 @@ const studentSchema = new mongoose.Schema({
     type: Array,
   },
   upcomingTests: {
-    type: Array
+    type: Array,
   },
   tokens: [
     {

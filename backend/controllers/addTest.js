@@ -1,7 +1,7 @@
 const Test = require("../models/test");
 
 const addTest = async (req, res) => {
-    // console.log(req.body.questionset)
+  // console.log(req.body.questionset)
   const newTest = new Test({
     class: req.body.class,
     topic: req.body.topic,

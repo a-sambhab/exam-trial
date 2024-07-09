@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import "./index.css"
+import "./index.css";
 import LoginForm from "./pages/LoginForm";
 import Landing from "./pages/Landing";
 import RegistrationForm from "./pages/RegistrationForm";
@@ -31,20 +31,20 @@ const router = createBrowserRouter([
   },
   {
     path: "/addquestions",
-    element: <AddQuestions/>
+    element: <AddQuestions />,
   },
   {
     path: "/addtest",
-    element: <AddTest/>
+    element: <AddTest />,
   },
   {
     path: "/appeartest",
-    element: <AppearTest/>
+    element: <AppearTest />,
   },
   {
     path: "/evaluatetest",
-    element: <EvaluateResults/>
-  }
+    element: <EvaluateResults />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

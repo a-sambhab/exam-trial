@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBookOpenReader,
+  faChalkboard,
   faClipboard,
   faClipboardCheck,
   faClipboardQuestion,
@@ -48,15 +49,12 @@ const Navbar = ({ user }) => {
           name="Add Questions"
           route="/addquestions"
         />
+        <Navbutton icon={faClipboard} name="Create Test" route="/addtest" />
+        <Navbutton icon={faChalkboard} name="Appear Test" route="/appeartest" />
         <Navbutton
-            icon={faClipboard}
-            name="Create Test"
-            route="/addtest"
-        />
-        <Navbutton
-            icon={faClipboardCheck}
-            name="Evaluate Results"
-            route="/evaluatetest"
+          icon={faClipboardCheck}
+          name="Evaluate Results"
+          route="/evaluatetest"
         />
       </div>
     </div>

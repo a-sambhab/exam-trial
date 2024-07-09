@@ -15,9 +15,7 @@ const AppearTest = () => {
           </div>
           <div className="w-[98%] h-[88%] rounded-lg bg-white flex justify-evenly items-center bg-opacity-50 border-2">
             <div className="w-[48%] h-[98%] bg-white rounded-xl border-r-2">
-              <input
-                type="textbox"
-              />
+              <input type="textbox" />
             </div>
             <div className="w-[48%] h-[98%]">
               

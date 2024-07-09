@@ -4,7 +4,7 @@ import axios from "axios";
 const RegistrationForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [access, setAccess] = useState("")
+  const [access, setAccess] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
@@ -13,7 +13,7 @@ const RegistrationForm = () => {
       const response = await axios.post("http://localhost:3001/auth/register", {
         username,
         password,
-        access
+        access,
       });
       setMessage(response.data.message);
     } catch (error) {

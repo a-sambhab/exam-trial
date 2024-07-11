@@ -11,11 +11,11 @@ const AppearTest = () => {
         <Navbar user={user} />
         <div className="w-[83%] h-[98%] flex flex-col items-center justify-evenly">
           <div className="w-[98%] h-[10%] text-3xl text-opacity-20 font-extrabold flex justify-start items-center opacity-70">
-            Add Questions
+            Test Name
           </div>
           <div className="w-[98%] h-[88%] rounded-lg bg-white flex justify-evenly items-center bg-opacity-50 border-2">
             <div className="w-[48%] h-[98%] bg-white rounded-xl border-r-2">
-              <input type="textbox" />
+              
             </div>
             <div className="w-[48%] h-[98%]">
               

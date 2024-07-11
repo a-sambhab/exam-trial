@@ -7,6 +7,7 @@ const getQuestionsByTopic = require("../controllers/getQuestionsByTopic");
 const addTest = require("../controllers/addTest");
 const loginAsStudent = require("../controllers/loginAsStudent");
 const registerStudent = require("../controllers/registerStudent");
+const appearTest = require("../controllers/appearTest");
 
 const router = express.Router();
 
@@ -18,5 +19,6 @@ router.get("/getquestionbytopic", getQuestionsByTopic);
 router.post("/addtest", addTest);
 router.post("/auth/loginStudent", loginAsStudent);
 router.post("/auth/registerStudent", registerStudent);
+router.post("/appearTest", appearTest)
 
 module.exports = router;

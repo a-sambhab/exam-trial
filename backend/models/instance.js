@@ -5,6 +5,14 @@ const instanceSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  studentID: {
+    type: String,
+    required: true,
+  },
+  schoolcode: {
+    type: String,
+    required: true,
+  },
   answersSelected: {
     type: Array,
   },
@@ -13,6 +21,9 @@ const instanceSchema = new mongoose.Schema({
     default: 0,
   },
   finishTime: {
+    type: Date,
+  },
+  startTime: {
     type: Date,
   },
   status: {

@@ -89,7 +89,7 @@ const Login = () => {
                 <button
                   className="w-full h-full bg-[#2196F3] text-white rounded-lg"
                   onClick={(e) => {
-                    console.log("try");
+                    // console.log("try");
                     handleSubmit(e);
                   }}
                 >

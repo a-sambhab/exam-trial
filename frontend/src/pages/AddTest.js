@@ -17,7 +17,10 @@ const AddTest = () => {
           <div className="w-[98%] h-[88%] rounded-lg bg-white flex justify-evenly items-center bg-opacity-50 border-2">
             <div className="w-[48%] h-[98%] bg-white rounded-xl border-r-2"></div>
             <div className="w-[48%] h-[98%]">
-              <math-field onInput={(evt) => setValue(evt.target.value)}>
+              <math-field
+                onInput={(evt) => setValue(evt.target.value)}
+                className="w-1/2 h-1/2"
+              >
                 {" "}
                 {value}{" "}
               </math-field>
